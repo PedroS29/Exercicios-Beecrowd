@@ -5,10 +5,14 @@ mi = int(n[1])
 hf = int(n[2])
 mf = int(n[3])
 
+inicio = hi * 60 + mi
+fim = hf * 60 + mf
 
-if hi > hf:
-    print(f'O JOGO DUROU {abs((hi-hf)-24)} HORA(S)')
-elif (hi==0) and (hf==0):
-    print(f'O JOGO DUROU 24 HORA(S)')
-else:
-    print(f'O JOGO DUROU {abs(hf-hi)} HORA(S)')
+if fim <= inicio:
+    fim += 24 * 60
+
+duracao_minutos = fim - inicio
+horas = duracao_minutos // 60
+minutos = duracao_minutos % 60
+
+print(f'O JOGO DUROU {horas} HORA(S) E {minutos} MINUTO(S)')
