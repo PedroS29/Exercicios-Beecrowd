@@ -1,9 +1,11 @@
 palavras = input()
 
-frase = palavras.split()
+frase_normal = []
 
-for palavra in frase:
-    if frase.index('p')%2 == 0:
-        palavra.replace('p')
-
-print(frase)
+for i in range(len(palavras)):
+    if palavras[i] == 'p' and palavras[i + 1].isalpha():
+        continue
+    else:
+        frase_normal.append(palavras[i])
+    
+print("".join(frase_normal))
