@@ -1,11 +1,11 @@
-palavras = input()
+frase = input().split()
+resposta = []
 
-frase_normal = []
+for palavra in frase:
+    resposta.append(palavra[1::2])
 
-for i in range(len(palavras)):
-    if palavras[i] == 'p' and palavras[i + 1].isalpha():
-        continue
+for i in range(len(resposta)):
+    if i == len(resposta)-1:
+        print(resposta[i])
     else:
-        frase_normal.append(palavras[i])
-    
-print("".join(frase_normal))
+        print(resposta[i], end=' ')
