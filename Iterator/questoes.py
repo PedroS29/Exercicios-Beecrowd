@@ -1,6 +1,13 @@
 #questao1
-ger = (list((i,i+2) for i in range(6) if i!=3))
-print(f'Resultado da questão 1: {ger}\n')
+def ger():
+    for i in range(6):
+        if i != 3:
+            x = (i, i+2)
+            yield x
+
+g1 = ger()
+lista = list(g1)
+print(f'Resposta da Questão 1:\n{lista}')
 
 #questao2
 def ger2():
@@ -11,18 +18,35 @@ def ger2():
 
 #questao3
 import random
-ger3 = (list(random.randint(1,60) for _ in range(6)))
-print(f'Resultado da questão 3: {ger3}')
+def ger3():
+    i = 0
+    for i in range(6):
+        i = random.randint(1,60)
+        yield i
+g3 = ger3()
+print(f'Resposta da Questão 3:\n{next(g3),next(g3),next(g3),next(g3),next(g3),next(g3)}')
 
 #questao4
 entrada = [(1, 2, 3), (5, 7), (99, 15, -5)]
 ger4 = (sum(i) for i in entrada)
-lista = []
+listaQ4 = []
 for i in ger4:
-    lista.append(i)
-print(*lista)
+    listaQ4.append(i)
+print('Resposta da Questão 4: ')
+print(*listaQ4)
 
 #questao5
+def ger5(x):
+    x = list(x)
+    prox = x[3]
+    for i in x:
+        if i != prox:
+            yield i
+        prox = i
+
+g5 = ger5('aaabbacabbbd')
+listaQ5 = list(g5)
+print(f'Resposta da Questão 5:\n{listaQ5}')
 
 #questao6
 '''Em questão de velocidade a segunda função é preferível
