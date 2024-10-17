@@ -6,8 +6,7 @@ def ger():
             yield x
 
 g1 = ger()
-lista = list(g1)
-print(f'Resposta da Questão 1:\n{lista}')
+print(f'Resposta da Questão 1:\n{list(g1)}')
 
 #questao2
 def ger2():
@@ -19,12 +18,11 @@ def ger2():
 #questao3
 import random
 def ger3():
-    i = 0
-    for i in range(6):
-        i = random.randint(1,60)
-        yield i
+    for _ in range(6):
+        x = random.randint(1,60)
+        yield x
 g3 = ger3()
-print(f'Resposta da Questão 3:\n{next(g3),next(g3),next(g3),next(g3),next(g3),next(g3)}')
+print(f'Resposta da Questão 3:\n{list(g3)}')
 
 #questao4
 entrada = [(1, 2, 3), (5, 7), (99, 15, -5)]
@@ -45,8 +43,7 @@ def ger5(x):
         prox = i
 
 g5 = ger5('aaabbacabbbd')
-listaQ5 = list(g5)
-print(f'Resposta da Questão 5:\n{listaQ5}')
+print(f'Resposta da Questão 5:\n{list(g5)}')
 
 #questao6
 '''Em questão de velocidade a segunda função é preferível
