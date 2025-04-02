@@ -1,1 +1,1 @@
-REPOSITÓRIO PARA GUARDAR A RESOLUÇÃO DOS EXERCÍCIOS DE LP
+# Repositório criado para manter resolução de exercícios
